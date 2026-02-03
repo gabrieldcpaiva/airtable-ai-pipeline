@@ -1,33 +1,47 @@
-# Airtable AI Pipeline
+# What this is
 
-## Overview
+This repository is a **lightweight reference architecture** for using Airtable as a control plane for AI-assisted content workflows.
 
-This repository provides a skeleton for building an AI-powered content pipeline using Airtable as a hub. The pipeline is organized into five stages:
+It shows how structured fields, state transitions, and prompt hygiene can turn AI from a “one-shot generator” into a repeatable, debuggable system.
 
-1. **Ingest** – collect data from external sources and bring it into the system.
-2. **Enrich** – add metadata and contextual information to the ingested data.
-3. **Validate/Guardrails** – ensure data quality and safety using rules and guardrails.
-4. **Generate Assets** – use AI models to produce content, such as summaries, reports, or creative assets.
-5. **Publish** – deliver the generated assets to Airtable bases or other destinations.
+The current focus is a simple pipeline:
+**Prompt → Draft → Polish → Final**
 
-## Repository Structure
+This is not a SaaS, SDK, or finished framework. It’s a working pattern.
 
-```
-/  
-├── docs/       Documentation for the pipeline.  
-├── prompts/    Prompt templates for AI components.  
-├── assets/     Placeholder for static assets (images, datasets).  
-└── src/        Source code for pipeline components.  
-```
+# What this is not
+	•	Not a production-ready platform
+	•	Not a “fully automated content machine”
+	•	Not optimized for scale
 
-## Demo
+The goal is clarity and operability, not hype.
 
-A placeholder demo GIF will live here once the pipeline is implemented:
+# Why Airtable
 
-![Demo](https://example.com/path/to/demo.gif)
+Airtable works well here because it provides:
+	•	Explicit state transitions
+	•	Human-readable logs
+	•	Easy manual overrides when AI output goes wrong
 
-## Next Steps
+In other words: when something breaks, you can see where and why.
 
-- Flesh out each stage of the pipeline: write ingestion scripts, enrichment logic, validation functions, asset generators, and publishing routines.  
-- Add documentation in the `docs/` directory explaining setup, usage, and examples.  
-- Draft a LinkedIn post announcing the project and inviting collaboration; highlight the pipeline stages and the benefits of using Airtable and AI together.
+# Demo
+
+Short screen recording showing the full flow:
+	•	raw prompt
+	•	AI draft
+	•	polish pass
+	•	final output
+
+[(Video link here)](https://drive.google.com/file/d/1zU5ZIXUa6BiQtdf6obWAqHvE9AckURm8/view?usp=sharing)
+
+# Repo structure
+	•	/prompts — prompt templates and variations
+	•	/src — placeholder for automation / scripts
+	•	/docs — notes on architecture and decisions
+	•	/assets — demo media and examples
+
+# Status
+
+Early scaffold. Actively iterating.
+Built to be understood, not admired.
