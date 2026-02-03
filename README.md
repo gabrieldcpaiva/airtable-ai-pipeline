@@ -1,47 +1,38 @@
-# What this is
+# Project Overview
 
-This repository is a **lightweight reference architecture** for using Airtable as a control plane for AI-assisted content workflows.
+This project provides an interface to Airtable's API, enabling easy access and manipulation of your Airtable data from Python, Node.js, or Docker environments.
 
-It shows how structured fields, state transitions, and prompt hygiene can turn AI from a “one-shot generator” into a repeatable, debuggable system.
+## Demo
 
-The current focus is a simple pipeline:
-**Prompt → Draft → Polish → Final**
+[Demo Link](#)
 
-This is not a SaaS, SDK, or finished framework. It’s a working pattern.
+## Quickstart Instructions
 
-# What this is not
-	•	Not a production-ready platform
-	•	Not a “fully automated content machine”
-	•	Not optimized for scale
+### Python
+```bash
+pip install airtable-python-wrapper
+```
 
-The goal is clarity and operability, not hype.
+### Node
+```bash
+npm install airtable
+```
 
-# Why Airtable
+### Docker
+```bash
+docker pull gabrieldcpaiva/airtable-ai-pipeline
+```
 
-Airtable works well here because it provides:
-	•	Explicit state transitions
-	•	Human-readable logs
-	•	Easy manual overrides when AI output goes wrong
+## Example Output
 
-In other words: when something breaks, you can see where and why.
+![](example-output.png)
 
-# Demo
+## Configuration
 
-Short screen recording showing the full flow:
-	•	raw prompt
-	•	AI draft
-	•	polish pass
-	•	final output
+You can create a `.env` file using the following template:
+```.env
+API_KEY=your_api_key
+BASE_ID=your_base_id
+TABLE_NAME=your_table_name
+```
 
-[(Video link here)](https://drive.google.com/file/d/1zU5ZIXUa6BiQtdf6obWAqHvE9AckURm8/view?usp=sharing)
-
-# Repo structure
-	•	/prompts — prompt templates and variations
-	•	/src — placeholder for automation / scripts
-	•	/docs — notes on architecture and decisions
-	•	/assets — demo media and examples
-
-# Status
-
-Early scaffold. Actively iterating.
-Built to be understood, not admired.
