@@ -31,8 +31,11 @@ docker pull gabrieldcpaiva/airtable-ai-pipeline
 
 You can create a `.env` file using the following template:
 ```.env
-API_KEY=your_api_key
-BASE_ID=your_base_id
-TABLE_NAME=your_table_name
+AIRTABLE_API_KEY=your_airtable_api_key
+AIRTABLE_BASE_ID=your_base_id
+AIRTABLE_TABLE_NAME=your_table_name
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=gpt-4o-mini
+LOG_LEVEL=info
 ```
 
