@@ -21,8 +21,8 @@ def test_config_consistency():
         readme_content = f.read()
 
     # Find the configuration section in README.md
-    # Look for a code block following the "Configuration" header
-    config_match = re.search(r'## Configuration.*?\n```.*?\.env\n(.*?)\n```', readme_content, re.DOTALL | re.IGNORECASE)
+    # Look for a code block containing .env variables after a Configuration header
+    config_match = re.search(r'#+ .*?Configuration.*?\n.*?```.*?\.env\n(.*?)\n\s*```', readme_content, re.DOTALL | re.IGNORECASE)
     assert config_match, "Configuration template block not found in README.md"
 
     readme_config_content = config_match.group(1)
