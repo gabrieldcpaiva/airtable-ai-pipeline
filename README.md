@@ -23,10 +23,6 @@ npm install airtable
 docker pull gabrieldcpaiva/airtable-ai-pipeline
 ```
 
-## Example Output
-
-![](example-output.png)
-
 ## Configuration
 
 You can create a `.env` file using the following template:
