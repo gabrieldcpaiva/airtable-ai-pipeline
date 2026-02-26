@@ -1,0 +1,3 @@
+airtable-python-wrapper
+openai
+python-dotenv
