@@ -47,12 +47,12 @@ Before you dive in, make sure you have:
 
 ### 🐍 Python
 ```bash
-pip install airtable-python-wrapper
+pip install airtable-python-wrapper==0.15.3
 ```
 
 ### 🟢 Node.js
 ```bash
-npm install airtable
+npm install airtable@0.12.2
 ```
 
 ### 🐳 Docker
