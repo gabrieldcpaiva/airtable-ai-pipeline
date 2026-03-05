@@ -70,10 +70,6 @@ This pipeline connects to your specified Airtable table, fetches records, and us
 
 ## 📺 Demo & Output
 
-Check out the demo in action!
-
-[🔗 View Demo Link](#)
-
 ### Example Output
 ![](example-output.png)
 
