@@ -57,7 +57,7 @@ npm install airtable@0.12.2
 
 ### 🐳 Docker
 ```bash
-docker pull gabrieldcpaiva/airtable-ai-pipeline
+docker pull gabrieldcpaiva/airtable-ai-pipeline:<version>
 ```
 
 ---
