@@ -42,4 +42,8 @@ jspm_packages/
 .vscode/
 *.swp
 *.swo
+
+# Environment variables
 .env
+*.env
+.env.*
