@@ -82,13 +82,6 @@ This pipeline connects to your specified Airtable table, fetches records, and us
 
 ---
 
-## 📺 Demo & Output
-
-### Example Output
-![](example-output.png)
-
----
-
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and suggest enhancements.
