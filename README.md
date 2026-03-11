@@ -6,6 +6,16 @@ Bridging the gap between your structured data and OpenAI's intelligence, this pi
 
 ---
 
+## Repository Structure
+
+The repository is organized as follows:
+
+- `src/python`: Python implementation and wrappers.
+- `src/node`: Node.js implementation and wrappers.
+- `assets`: Project assets.
+- `docs`: Documentation.
+- `prompts`: AI prompts used in the pipeline.
+
 ## ✨ Features
 
 - 🤖 **AI-Powered**: Fully integrated with OpenAI's latest models (like `gpt-4o-mini`).
@@ -47,12 +57,16 @@ Before you dive in, make sure you have:
 
 ### 🐍 Python
 ```bash
+cd src/python
 pip install airtable-python-wrapper==0.15.3
+pip install -r requirements.txt
 ```
 
 ### 🟢 Node.js
 ```bash
+cd src/node
 npm install airtable@0.12.2
+npm install
 ```
 
 ### 🐳 Docker
@@ -75,6 +89,11 @@ This pipeline connects to your specified Airtable table, fetches records, and us
 
 ---
 
-## 📜 License
+## Contributing
 
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and suggest enhancements.
+
+Please note that this project is released with a [Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+## 📜 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
