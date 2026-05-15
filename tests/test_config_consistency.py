@@ -1,6 +1,11 @@
 import os
 import re
 
+# Pre-compile regular expressions at the module level for performance
+ENV_KEYS_REGEX = re.compile(r'^([A-Z_]+)=', re.MULTILINE)
+CONFIG_SECTION_REGEX = re.compile(r'#+ .*?Configuration.*?\n.*?```.*?\.env\n(.*?)\n\s*```', re.DOTALL | re.IGNORECASE)
+README_KEYS_REGEX = re.compile(r'([A-Z_]+)=')
+
 def test_config_consistency():
     # Read .env.example
     env_example_path = ".env.example"
@@ -10,7 +15,7 @@ def test_config_consistency():
         env_content = f.read()
 
     # Extract keys from .env.example (assuming KEY=VALUE format)
-    env_keys = set(re.findall(r'^([A-Z_]+)=', env_content, re.MULTILINE))
+    env_keys = set(ENV_KEYS_REGEX.findall(env_content))
     assert len(env_keys) > 0, "No environment variables found in .env.example"
 
     # Read README.md
@@ -22,11 +27,11 @@ def test_config_consistency():
 
     # Find the configuration section in README.md
     # Look for a code block containing .env variables after a Configuration header
-    config_match = re.search(r'#+ .*?Configuration.*?\n.*?```.*?\.env\n(.*?)\n\s*```', readme_content, re.DOTALL | re.IGNORECASE)
+    config_match = CONFIG_SECTION_REGEX.search(readme_content)
     assert config_match, "Configuration template block not found in README.md"
 
     readme_config_content = config_match.group(1)
-    readme_keys = set(re.findall(r'([A-Z_]+)=', readme_config_content))
+    readme_keys = set(README_KEYS_REGEX.findall(readme_config_content))
 
     # Check if all keys from .env.example are in README.md
     missing_in_readme = env_keys - readme_keys
