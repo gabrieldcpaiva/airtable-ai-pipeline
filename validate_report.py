@@ -4,7 +4,7 @@ import sys
 def main():
     try:
         with open("testing_report.json", "r") as f:
-            data = json.load(f)
+            json.load(f)
     except FileNotFoundError:
         print("Error: testing_report.json not found")
         sys.exit(1)
