@@ -1,4 +1,3 @@
-import pytest
 import json
 from unittest.mock import patch, mock_open
 from validate_report import main
