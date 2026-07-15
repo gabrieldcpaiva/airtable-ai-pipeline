@@ -5,7 +5,7 @@ from validate_report import main
 
 def test_main_success():
     """Test main function when testing_report.json is valid."""
-    mock_data = {"status": "success"}
+    mock_data = [{"status": "success", "confidence": 2}]
     with patch("builtins.open", mock_open(read_data=json.dumps(mock_data))):
         # Should complete without error
         main()
@@ -27,3 +27,13 @@ def test_main_invalid_json():
                 main()
                 mock_exit.assert_called_once_with(1)
                 assert any("invalid JSON" in call.args[0] for call in mock_print.call_args_list)
+
+def test_main_invalid_confidence():
+    """Test main function when confidence is out of range."""
+    mock_data = [{"status": "success", "confidence": 4}]
+    with patch("builtins.open", mock_open(read_data=json.dumps(mock_data))):
+        with patch("sys.exit") as mock_exit:
+            with patch("builtins.print") as mock_print:
+                main()
+                mock_exit.assert_called_once_with(1)
+                mock_print.assert_called_once_with("Error: confidence must be an integer between 1 and 3")
